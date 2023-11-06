@@ -12,7 +12,7 @@ export default async function handler(
     if (!session)
       return res
         .status(401)
-        .json({ message: "Por favor, logue para fazer um post" });
+        .json({ message: "Por favor, logue para fazer um post!" });
 
     const title: string = req.body.title;
 
@@ -27,12 +27,12 @@ export default async function handler(
     if (title.length > 300){
       return res
         .status(403)
-        .json({ message: "Por favor escreva um post menor" });
+        .json({ message: "Por favor escreva um post menor!" });
     }
     if (!title.length){
       return res
         .status(403)
-        .json({ message: "Por favor, não deixe este campo vazio" });
+        .json({ message: "Por favor, não deixe este campo vazio!" });
     }
 
     //Create Post

@@ -12,7 +12,7 @@ export default function Logged({image}: User) {
   return (
     <li className="flex gap-8 items-center">
       <button onClick={() => signOut() } className="bg-gray-700 text-white text-sm px-6 py-2 rounded-md">
-        Sign out
+        Sair
       </button>
       <Link href={'/dashboard'}>
         <Image width={64} height={64} src={image} alt="" priority />

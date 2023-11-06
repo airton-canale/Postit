@@ -2,21 +2,29 @@
 
 import { useState } from "react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import toast from "react-hot-toast";
 
 export default function Createpost() {
   const [title, setTitle] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
+  let toastPostID: string;
 
   const post = async (title: string) =>
     await axios.post("/api/posts/addPost", {
       title,
     });
-  const onError = (error: any) => toast.error(error?.response?.data.message);
+  const onError = (error: any) => {
+    if (error instanceof AxiosError) {
+      toast.remove(toastPostID);
+      toast.error(error?.response?.data.message, { id: toastPostID });
+    }
+    setIsDisabled(false);
+  };
 
   const onSuccess = (data: any) => {
-    console.log(data);
+    toast.remove(toastPostID);
+    toast.success("Post realizado com sucesso!", { id: toastPostID })
     setTitle("");
     setIsDisabled(false);
   };
@@ -30,6 +38,7 @@ export default function Createpost() {
   const submitPost = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsDisabled(true);
+    toastPostID = toast.loading("Criando seu post!", { id: toastPostID });
     mutate(title);
   };
 
@@ -40,7 +49,7 @@ export default function Createpost() {
           onChange={(e) => setTitle(e.target.value)}
           name="title"
           value={title}
-          placeholder="O que vem na sua cabeça?"
+          placeholder="O que está acontecendo?"
           className="p-4 text-lg rounded-md bg-gray-200"
         ></textarea>
       </div>
