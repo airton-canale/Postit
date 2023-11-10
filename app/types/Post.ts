@@ -8,7 +8,7 @@ export type PostType = {
       image: string
       name: string
     }
-    comments: {
+    Comment: {
       createdAt?: string
       id: string
       postId: string
