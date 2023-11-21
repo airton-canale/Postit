@@ -15,7 +15,7 @@ export default function Logged({image}: User) {
         Sair
       </button>
       <Link href={'/dashboard'}>
-        <Image width={64} height={64} src={image} alt="" priority />
+        <Image className="rounded-full" width={64} height={64} src={image} alt="" priority />
       </Link>
     </li>
   );

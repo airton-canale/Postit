@@ -19,13 +19,12 @@ export default function Home() {
 
   if (error) return error;
   if (isLoading) return "Carregando....";
-  console.log(data)
   return (
     <main>
       <AddPost />
       {data?.map((post) => (
         <Post
-          comments={post.Comment}
+          comments={post.comments}
           key={post.id}
           name={post.user.name}
           avatar={post.user.image}
