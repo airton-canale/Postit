@@ -30,14 +30,12 @@ export default function EditPost({
     await axios.delete("/api/posts/deletePost", { data: id });
   const onError = (error: any) => {
     toast.error("Erro ao deletar este post!", { id: deleteToastID });
-    console.log(error);
   };
 
   const onSuccess = (data: any) => {
     toast.remove(deleteToastID);
     toast.success("Post deletado com sucesso!", { id: deleteToastID });
     queryClient.invalidateQueries({ queryKey: ["auth-posts"] });
-    console.log(data);
   };
 
   //Toggle
@@ -53,7 +51,7 @@ export default function EditPost({
   });
 
   const deletePost = () => {
-    deleteToastID = toast.loading("Deletando seu post!", { id: deleteToastID });
+    deleteToastID = toast.loading("Deletando seu post...", { id: deleteToastID });
     mutate(id);
   };
 

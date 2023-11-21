@@ -40,7 +40,7 @@ export default function Createpost() {
   const submitPost = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsDisabled(true);
-    toastPostID = toast.loading("Criando seu post!", { id: toastPostID });
+    toastPostID = toast.loading("Criando seu post...", { id: toastPostID });
     mutate(title);
   };
 
