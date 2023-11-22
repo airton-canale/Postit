@@ -15,6 +15,22 @@ type URL = {
   };
 };
 
+type Comment = {
+    id: string;
+    createdAt?: string;
+    length?: number;
+    postId: string;
+    title: string;
+    userId: string;
+    message: string
+    user: {
+      email: string;
+      id: string;
+      image: string;
+      name: string;
+    };
+};
+
 const fetchDetails = async (slug: string) => {
   const response = await axios.get(`/api/posts/${slug}`);
   return response.data;
@@ -27,7 +43,6 @@ export default function PostDetail(url: URL) {
   });
 
    //Toggle
-   const [toggle, setToggle] = useState(false);
    const [id, setId] = useState('')
 
   if (isLoading) return "Carregando...";
@@ -44,7 +59,7 @@ export default function PostDetail(url: URL) {
       />
       <AddComment id={data?.id} 
       />
-      {data?.Comment.map((comment) => (
+      {data?.Comment.map((comment: Comment) => (
         <div key={comment.id} className="my-6 bg-white p-8 rounded-md flex justify-between items-center">
           <div className="flex flex-col">
           <div className="flex items-center gap-2">
@@ -62,7 +77,6 @@ export default function PostDetail(url: URL) {
           </div>
           <button
             onClick={(e) => {
-              setToggle(true);
               setId(comment.id)
             }}
             className="text-sm font-bold text-red-500"
@@ -71,7 +85,7 @@ export default function PostDetail(url: URL) {
           </button>
         </div>
       ))}
-      {toggle && <ToggleComment id={id} setToggle={setToggle} />}
+      {!!id && <ToggleComment id={id} setToggle={() => setId('')} />}
     </div>
   );
 }

@@ -3,6 +3,12 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 import prisma from "../../../prisma/client";
 
+type Session = {
+  email: string 
+  id: string
+ }
+ 
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -18,8 +24,8 @@ export default async function handler(
     try {
     const data = await prisma.user.findUnique({
         where: {
-            email: session.user?.email
-        },
+            email: session.user?.email as string
+        } as Session,
         include: {
             Post: {
                 orderBy: {
