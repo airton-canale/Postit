@@ -16,7 +16,7 @@
 
 
 
-### This is a project that I used to practice my knowledge mainly of the Prisma database with PostgreSQL, and make Api's with NodeJS. The following project also uses, TailwindCSS, TypeScript NextJS.
+### This is a project that I used to practice my knowledge mainly of the Prisma database with PostgreSQL, and make Api's with NodeJS and express framework. The following project also uses, TailwindCSS, TypeScript NextJS.
 
 <br>
 
@@ -32,15 +32,10 @@
 <br>
 
 ## 🚀 Deploy
- -  https://interface-tailwind.canale.dev
+ -  https://postit.canale.dev
 
- - This application was deployed with Github Pages library 
+ - This application was deployed with Vercel Service
 
-
- ```bash
-# Running deploy
-$ npm run deploy
-```
 <br>
 
 ## Installation
@@ -49,15 +44,15 @@ $ npm run deploy
 
 ```bash
 # clone it
-$ git clone git@github.com:airton-canale/interface-tailwind.git
+$ git clone git@github.com:airton-canale/postit.git
 
-$ cd interface-tailwind
+$ cd postit
 
 # Install dependencies
 $ npm install
 
 # Running scripts
-$ npm start
+$ npm run dev
 ```
 - And enter in your browser using http://localhost:3000
 
@@ -66,7 +61,10 @@ $ npm start
 
 This project was developed using the following technologies:
 
-- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"> **React.JS**
+- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png"> **NextJS**
 - <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tailwind/tailwind.png"> **Tailwind**
 - <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"> **JavaScript**
-- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"> **CSS**
+- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"> **TypeScript**
+- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png"> **NodeJS**
+- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/postgresql/postgresql.png"> **PostgreSQL**
+- <img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/express/express.png"> **Express**
